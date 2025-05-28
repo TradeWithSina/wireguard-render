@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: wireguard
+    env: docker
+    plan: starter
+    dockerfilePath: ./Dockerfile
+    autoDeploy: false
+    ports:
+      - port: 51820
+        protocol: udp
+    disk:
+      name: wireguard-data
+      mountPath: /config
+      sizeGB: 1
